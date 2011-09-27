@@ -31,7 +31,7 @@ namespace Relax
         List<AmbientSoundControl> controls = new List<AmbientSoundControl>();
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (UIElement c in this.mainGrid.Children)
+            foreach (UIElement c in this.soundGrid.Children)
             { 
                 if (c is AmbientSoundControl)
                 {
@@ -72,8 +72,9 @@ namespace Relax
                 if (c.MaybePlay()) picked++;
                 if (picked == count) break;
             }
-            if (picked == 0)
-                Randomize(count);
+            // Increase number of sounds picked, still keeps it under count
+            if (picked < count)
+                Randomize(count-picked);
         }
 
         private void StopAllSounds()

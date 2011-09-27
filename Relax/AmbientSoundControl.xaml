@@ -7,8 +7,9 @@
              d:DesignHeight="21" d:DesignWidth="282">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <CheckBox Width="164" Height="14" Name="EnableThisSound" Checked="EnableThisSound_Checked" Unchecked="EnableThisSound_Unchecked" />
-            <Slider Height="23" Maximum="100" Name="VolumeOfThisSound" Value="80" Width="100" ValueChanged="VolumeOfThisSound_ValueChanged" />
+            <CheckBox Width="164" Height="17" Name="EnableThisSound" Checked="EnableThisSound_Checked" Unchecked="EnableThisSound_Unchecked" />
+            <Slider Height="23" Maximum="100" Name="VolumeOfThisSound" Value="80" Width="91" ValueChanged="VolumeOfThisSound_ValueChanged" />
+            <Label Height="28" Name="label1" />
             <CheckBox Height="14" Name="KeepThisSound" IsChecked="True" />
         </StackPanel>
     </Grid>

@@ -82,6 +82,7 @@ namespace Relax
             //try
             //{
                 this.Sound = this.Engine.Play2D(this.FileName, true, true);
+                CheckVolume();
                 this.Sound.Paused = false;
             //}
             //catch
@@ -103,6 +104,11 @@ namespace Relax
         }
 
         private void VolumeOfThisSound_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            CheckVolume();
+        }
+
+        private void CheckVolume()
         {
             this.Volume = (float)this.VolumeOfThisSound.Value / 100.0f;
         }

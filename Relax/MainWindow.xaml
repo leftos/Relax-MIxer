@@ -2,18 +2,72 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:relax="clr-namespace:Relax"
-        Title="Relax Mixer" Height="350" Width="525" Loaded="Window_Loaded" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended">
+        Title="Relax Mixer" Height="504" Width="660" Loaded="Window_Loaded" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" ResizeMode="CanMinimize">
     <Grid Name="mainGrid">
         <Slider Height="23" HorizontalAlignment="Center" Margin="0,12,0,0" Name="sldMasterVolume" VerticalAlignment="Top" Width="227" HorizontalContentAlignment="Left" Maximum="100" Value="100" ValueChanged="sldMasterVolume_ValueChanged" />
         <Label Content="Master Volume" Height="28" HorizontalAlignment="Center" Margin="42,7,371,0" Name="label1" VerticalAlignment="Top" />
-        <Button Content="Random" Height="23" HorizontalAlignment="Left" Margin="416,12,0,0" Name="btnRandom" VerticalAlignment="Top" Width="75" Click="btnRandom_Click" />
-        <TextBlock HorizontalAlignment="Left" Name="textBlock1" Text="Use the checkboxes on the right of the volume sliders to select which sounds can be chosen using &quot;Random&quot;" VerticalAlignment="Bottom" Height="34" Width="479" TextWrapping="Wrap" FlowDirection="LeftToRight" TextAlignment="Right" Margin="12,0,0,12" FontStyle="Italic" />
-        <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="12,186,0,0" x:Name="ascBeach" VerticalAlignment="Top" InternalName="Beach" FriendlyName="Beach" />
-        <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="12,41,0,0" x:Name="ascAirConditioner" VerticalAlignment="Top" FriendlyName="Airconditioner" InternalName="Airconditioner" />
-        <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="12,70,0,0" x:Name="ascAlarm" VerticalAlignment="Top" FriendlyName="Alarm" InternalName="Alarm" />
-        <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="12,99,0,0" x:Name="ascAquarium" VerticalAlignment="Top" FriendlyName="Aquarium" InternalName="Aquarium" />
-        <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="12,128,0,0" x:Name="ascAtmospheric" VerticalAlignment="Top" FriendlyName="Atmospheric" InternalName="Atmospheric" />
-        <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="12,157,0,0" x:Name="ascBasstone" VerticalAlignment="Top" FriendlyName="Basstone" InternalName="Basstone" />
-        <extToolkit:IntegerUpDown HorizontalAlignment="Left" Margin="452,40,0,0" Name="iudRandom" VerticalAlignment="Top" Maximum="56" Minimum="1" Value="5" />
+        <Button Content="Random" Height="23" HorizontalAlignment="Left" Margin="464,13,0,0" Name="btnRandom" VerticalAlignment="Top" Width="75" Click="btnRandom_Click" />
+        <TextBlock HorizontalAlignment="Right" Name="textBlock1" Text="Use the checkboxes on the right of the volume sliders to select which sounds can be chosen using &quot;Random&quot;" VerticalAlignment="Bottom" Height="19" Width="573" TextWrapping="Wrap" FlowDirection="LeftToRight" TextAlignment="Right" Margin="0,0,12,12" FontStyle="Italic" />
+        <extToolkit:IntegerUpDown HorizontalAlignment="Right" Margin="0,12,12,0" Name="iudRandom" VerticalAlignment="Top" Maximum="56" Minimum="1" Value="5" />
+        <ScrollViewer Height="389" HorizontalAlignment="Left" Margin="12,41,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="614" VerticalScrollBarVisibility="Auto">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="824" Name="soundGrid" Width="615">
+                <relax:AmbientSoundControl FriendlyName="Beach" HorizontalAlignment="Left" InternalName="Beach" Margin="10,155,0,0" x:Name="ascBeach" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Airconditioner" HorizontalAlignment="Left" InternalName="Airconditioner" Margin="10,10,0,0" x:Name="ascAirConditioner" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Alarm" HorizontalAlignment="Left" InternalName="Alarm" Margin="10,39,0,0" x:Name="ascAlarm" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Aquarium" HorizontalAlignment="Left" InternalName="Aquarium" Margin="10,68,0,0" x:Name="ascAquarium" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Atmospheric" HorizontalAlignment="Left" InternalName="Atmospheric" Margin="10,97,0,0" x:Name="ascAtmospheric" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Basstone" HorizontalAlignment="Left" InternalName="Basstone" Margin="10,126,0,0" x:Name="ascBasstone" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Big Clock" HorizontalAlignment="Left" InternalName="Bigclock" Margin="10,184,0,0" x:Name="ascBigclock" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl FriendlyName="Birds" HorizontalAlignment="Left" InternalName="Birds" Margin="10,213,0,0" x:Name="ascBirds" VerticalAlignment="Top" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,242,0,0" x:Name="ascCampfire" VerticalAlignment="Top" FriendlyName="Campfire" InternalName="Campfire" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,271,0,0" x:Name="ascCatpurr" VerticalAlignment="Top" FriendlyName="Cat Purr" InternalName="Catpurr" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,300,0,0" x:Name="ascChair" VerticalAlignment="Top" FriendlyName="Chair" InternalName="Chair" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,329,0,0" x:Name="ascCicada" VerticalAlignment="Top" FriendlyName="Cicada" InternalName="Cicada" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,358,0,0" x:Name="ascCity" VerticalAlignment="Top" FriendlyName="City" InternalName="City" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,387,0,0" x:Name="ascColdwind" VerticalAlignment="Top" FriendlyName="Cold Wind" InternalName="Coldwind" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,416,0,0" x:Name="ascCoqui" VerticalAlignment="Top" FriendlyName="Coqui" InternalName="Coqui" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,445,0,0" x:Name="ascCreek" VerticalAlignment="Top" FriendlyName="Creek" InternalName="Creek" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,474,0,0" x:Name="ascCricket" VerticalAlignment="Top" FriendlyName="Cricket" InternalName="Cricket" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,503,0,0" x:Name="ascDishwasher" VerticalAlignment="Top" FriendlyName="Dishwasher" InternalName="Dishwasher" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,532,0,0" x:Name="ascDream" VerticalAlignment="Top" FriendlyName="Dream" InternalName="Dream" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,561,0,0" x:Name="ascDrum" VerticalAlignment="Top" FriendlyName="Drum" InternalName="Drum" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,592,0,0" x:Name="ascErhu" VerticalAlignment="Top" FriendlyName="Erhu" InternalName="Erhu" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,621,0,0" x:Name="ascFoghorn" VerticalAlignment="Top" FriendlyName="Foghorn" InternalName="Foghorn" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,650,0,0" x:Name="Frogs" VerticalAlignment="Top" FriendlyName="Frogs" InternalName="Frogs" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,679,0,0" x:Name="Gregorianchant" VerticalAlignment="Top" FriendlyName="Gregorian Chant" InternalName="Gregorianchant" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,708,0,0" x:Name="ascGuitarsolo" VerticalAlignment="Top" FriendlyName="Guitar Solo" InternalName="Guitarsolo" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,737,0,0" x:Name="ascHeartbeat" VerticalAlignment="Top" FriendlyName="Heartbeat" InternalName="Heartbeat" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,766,0,0" x:Name="ascHeavyrain" VerticalAlignment="Top" FriendlyName="Heavy Rain" InternalName="Heavyrain" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="10,795,0,0" x:Name="ascHorse" VerticalAlignment="Top" FriendlyName="Horse" InternalName="Horse" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,10,0,0" x:Name="ascJinglebells" VerticalAlignment="Top" FriendlyName="Jingle Bells" InternalName="Jinglebells" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,39,0,0" x:Name="ascLargefan" VerticalAlignment="Top" FriendlyName="Large Fan" InternalName="Largefan" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,68,0,0" x:Name="ascMonkchant" VerticalAlignment="Top" FriendlyName="Monk Chant" InternalName="Monkchant" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,97,0,0" x:Name="ascMusicbox" VerticalAlignment="Top" FriendlyName="Music Box" InternalName="Musicbox" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,126,0,0" x:Name="ascNature" VerticalAlignment="Top" FriendlyName="Nature" InternalName="Nature" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,155,0,0" x:Name="ascNoise" VerticalAlignment="Top" FriendlyName="Noise" InternalName="Noise" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,184,0,0" x:Name="ascOcean" VerticalAlignment="Top" FriendlyName="Ocean" InternalName="Ocean" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,213,0,0" x:Name="ascOwl" VerticalAlignment="Top" InternalName="Owl" FriendlyName="Owl" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,242,0,0" x:Name="ambientSoundControl1" VerticalAlignment="Top" FriendlyName="Piano" InternalName="Piano" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,271,0,0" x:Name="ambientSoundControl2" VerticalAlignment="Top" FriendlyName="Rain" InternalName="Rain" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,300,0,0" x:Name="ambientSoundControl3" VerticalAlignment="Top" FriendlyName="Refridgerator" InternalName="Refrigerator" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,329,0,0" x:Name="ambientSoundControl4" VerticalAlignment="Top" FriendlyName="Relax" InternalName="Relax" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,358,0,0" x:Name="ambientSoundControl5" VerticalAlignment="Top" FriendlyName="Seagull" InternalName="Seagull" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,387,0,0" x:Name="ambientSoundControl6" VerticalAlignment="Top" FriendlyName="Shishiodoshi" InternalName="Shishiodoshi" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,416,0,0" x:Name="ambientSoundControl7" VerticalAlignment="Top" FriendlyName="Small Clock" InternalName="Smallclock" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,445,0,0" x:Name="ambientSoundControl8" VerticalAlignment="Top" FriendlyName="Stopwatch" InternalName="Stopwatch" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,474,0,0" x:Name="ambientSoundControl9" VerticalAlignment="Top" FriendlyName="Storm" InternalName="Storm" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,503,0,0" x:Name="ambientSoundControl10" VerticalAlignment="Top" FriendlyName="Thunder" InternalName="Thunder" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,532,0,0" x:Name="ambientSoundControl11" VerticalAlignment="Top" FriendlyName="Train" InternalName="Train" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,561,0,0" x:Name="ambientSoundControl12" VerticalAlignment="Top" FriendlyName="Vacuum Cleaner" InternalName="Vacuum" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,592,0,0" x:Name="ambientSoundControl13" VerticalAlignment="Top" FriendlyName="Water Crickets" InternalName="Watercrickets" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,621,0,0" x:Name="ambientSoundControl14" VerticalAlignment="Top" FriendlyName="Water Dripping" InternalName="Waterdripping" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,650,0,0" x:Name="ambientSoundControl15" VerticalAlignment="Top" FriendlyName="Water Music" InternalName="Watermusic" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,679,0,0" x:Name="ambientSoundControl16" VerticalAlignment="Top" FriendlyName="Whale Song" InternalName="Whalesong" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,708,0,0" x:Name="ambientSoundControl17" VerticalAlignment="Top" FriendlyName="White Noise" InternalName="White" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,737,0,0" x:Name="ambientSoundControl18" VerticalAlignment="Top" FriendlyName="Wind Chimes" InternalName="Windchimes" />
+                <relax:AmbientSoundControl HorizontalAlignment="Left" Margin="306,766,0,0" x:Name="ambientSoundControl19" VerticalAlignment="Top" FriendlyName="Wolves" InternalName="Wolves" />
+            </Grid>
+        </ScrollViewer>
+        <Label Content="Up to" Height="28" HorizontalAlignment="Right" Margin="0,11,53,0" Name="label2" VerticalAlignment="Top" />
     </Grid>
 </Window>
