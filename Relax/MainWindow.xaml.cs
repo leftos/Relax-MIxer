@@ -116,22 +116,27 @@ namespace Relax
                 string cname;
                 float cvolume;
 
-                StopAllSounds();
-
                 try
                 {
-                    while ((temp = tr.ReadLine()) != null)
-                    {
-                        string[] attrs = temp.Split(' ');
-                        cname = attrs[0];
-                        cvolume = (float) Convert.ToDouble(attrs[1]);
+                    temp = tr.ReadLine();
 
-                        foreach (AmbientSoundControl c in controls)
+                    if (temp == "Relax Mixer Profile")
+                    {
+                        StopAllSounds();
+                        
+                        while ((temp = tr.ReadLine()) != null)
                         {
-                            if (c.Name == cname)
+                            string[] attrs = temp.Split(' ');
+                            cname = attrs[0];
+                            cvolume = (float)Convert.ToDouble(attrs[1]);
+
+                            foreach (AmbientSoundControl c in controls)
                             {
-                                c.VolumeOfThisSound.Value = cvolume * 100;
-                                c.EnableThisSound.IsChecked = true;
+                                if (c.Name == cname)
+                                {
+                                    c.VolumeOfThisSound.Value = cvolume * 100;
+                                    c.EnableThisSound.IsChecked = true;
+                                }
                             }
                         }
                     }
@@ -159,6 +164,8 @@ namespace Relax
                 string filename = sfd.FileName;
 
                 StreamWriter tw = new StreamWriter(filename);
+
+                tw.WriteLine("Relax Mixer Profile");
                 
                 foreach (AmbientSoundControl c in controls)
                 {
