@@ -1,8 +1,11 @@
-v0.1 (first complete version)
+v0.2 28/Sep/11
+ADD: Added Load/Save profiles feature, which saves which sounds were playing and at what volume.
+
+v0.1 (first complete version) 27/Sep/11
 ADD: Added all 55 sounds to the program
 CODE: Completely reworked underlying code to avoid code repetition
 
-v0.0.1 (initial commit, alpha)
+v0.0.1 (initial commit, alpha) 27/Sep/11
 INFO: Initial published build of the program
 INFO: Includes all 56 Relax & Sleep sounds as ogg files, 5 of them can actually be used from inside the program.
 INFO: Has a Random button that chooses randomly for you.
