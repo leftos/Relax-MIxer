@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using IrrKlang;
 using System.Collections;
+using System.IO;
 
 namespace Relax
 {
@@ -94,6 +95,82 @@ namespace Relax
         {
             if (iudRandom.Value.HasValue)
                 Randomize((int)iudRandom.Value);
+        }
+
+        private void mnuProfilesLoad_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog ofd = new Microsoft.Win32.OpenFileDialog();
+            ofd.DefaultExt = ".rmp";
+            ofd.AddExtension = true;
+            ofd.Filter = "Relax Mixer profiles (*.rmp)|*.rmp";
+
+            Nullable<bool> result = ofd.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = ofd.FileName;
+
+                TextReader tr = new StreamReader(filename);
+
+                string temp;
+                string cname;
+                float cvolume;
+
+                StopAllSounds();
+
+                try
+                {
+                    while ((temp = tr.ReadLine()) != null)
+                    {
+                        string[] attrs = temp.Split(' ');
+                        cname = attrs[0];
+                        cvolume = (float) Convert.ToDouble(attrs[1]);
+
+                        foreach (AmbientSoundControl c in controls)
+                        {
+                            if (c.Name == cname)
+                            {
+                                c.VolumeOfThisSound.Value = cvolume * 100;
+                                c.EnableThisSound.IsChecked = true;
+                            }
+                        }
+                    }
+                }
+                catch (Exception err)
+                {
+                    
+                }
+            }
+        }
+
+        private void mnuProfilesSave_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.SaveFileDialog sfd = new Microsoft.Win32.SaveFileDialog();
+            sfd.DefaultExt = ".rmp";
+            sfd.Filter = "Relax Mixer profiles (*.rmp)|*.rmp";
+            sfd.AddExtension = true;
+            sfd.OverwritePrompt = true;
+            sfd.ValidateNames = true;
+
+            Nullable<bool> result = sfd.ShowDialog();
+
+            if (result == true)
+            {
+                string filename = sfd.FileName;
+
+                StreamWriter tw = new StreamWriter(filename);
+                
+                foreach (AmbientSoundControl c in controls)
+                {
+                    if (c.EnableThisSound.IsChecked == true)
+                    {
+                        string temp = c.Name + " " + c.Volume;
+                        tw.WriteLine(temp);
+                    }
+                }
+
+                tw.Close();
+            }
         }
 
     }
