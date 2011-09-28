@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:relax="clr-namespace:Relax"
-        Title="Relax Mixer" Height="557" Width="660" Loaded="Window_Loaded" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" ResizeMode="CanMinimize" Icon="/Relax;component/Images/72.png">
+        Title="Relax Mixer" Height="557" Width="660" Loaded="Window_Loaded" xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended" ResizeMode="CanMinimize" Icon="/Relax;component/72.ico">
     <Grid Name="mainGrid" Height="527">
         <Slider Height="23" HorizontalAlignment="Center" Margin="205,34,207,0" Name="sldMasterVolume" VerticalAlignment="Top" Width="227" HorizontalContentAlignment="Left" Maximum="100" Value="100" ValueChanged="sldMasterVolume_ValueChanged" />
         <Label Content="Master Volume" Height="28" HorizontalAlignment="Center" Margin="108,29,439,0" Name="label1" VerticalAlignment="Top" />
@@ -72,7 +72,11 @@
         <Menu Height="23" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="638">
             <MenuItem Header="Profiles">
                 <MenuItem Header="Load" Name="mnuProfilesLoad" Click="mnuProfilesLoad_Click" />
-                <MenuItem Header="Save" Name="mnuProfilesSave" Click="mnuProfilesSave_Click" />
+                <MenuItem Header="Save" Name="mnuProfilesSave" Click="mnuProfilesSave_Click">
+                    <MenuItem.Icon>
+                        <Image Source="/Relax;component/72.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
     </Grid>
